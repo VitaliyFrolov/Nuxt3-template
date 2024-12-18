@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: "always"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/web-app
+      - /web-app/node_modules
